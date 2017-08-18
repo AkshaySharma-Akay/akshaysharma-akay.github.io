@@ -1,0 +1,125 @@
+/*
+
+
+    font-family: 'Bree Serif', serif;
+
+    font-family: 'Lato', sans-serif;
+
+    font-family: 'Roboto', sans-serif;
+
+*/
+#background-wrapper{
+  position: fixed;
+  z-index: -1000;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+#video-bg-elem {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+/*    #wrapper
+  5%+90%+5%
+*/
+#wrapper{
+  position: absolute;
+  width: 90%;
+  padding:0 5%;
+  min-height: 100%;
+  z-index: 1000;
+  background:rgba(00,00,00,0.20);
+}
+
+/* #timeline */
+
+#timeline{
+  position:relative;
+  padding:20px 0;
+  margin:20px 0;
+}
+#timeline::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0px;
+  height: 100%;
+  width: 10px;
+  background: repeating-radial-gradient(#52D273,#000);
+}
+.timeline-block{
+  background-color:#fff;
+  padding:0px;
+  width: calc(100% - 80px);/*40%*/
+  margin:0px 80px 50px;
+} 
+.timeline-content h2{
+  font-family: 'Bree Serif', serif;
+  font-size:21px;
+  padding:18px 20px;
+  color:#fff;
+  margin:0;
+  background-color:#52D273;
+}
+.timeline-article {
+  display:flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items: center;
+}
+.timeline-content img{
+  width:150px;
+  height:150px;
+  border:10px solid #DFDFDF;
+  margin:20px;
+  border-radius:50%;
+}
+.timeline-content p{
+  display:block;
+  color:#555;
+  padding:20px 20px 15px 20px;
+}
+.timeline-content-footer{
+  display:flex;
+  flex-direction:row;
+  padding:20px;
+  color:#777;
+}
+.timeline-content-footer .date{
+  width:50%;
+}
+.timeline-content-footer .date i{
+  width:30px;
+  text-align: center;
+  color: #52D273;
+}
+.timeline-content .read-more{
+  width:50%;
+  text-align: right
+}
+.timeline-content .read-more a{
+  display:inline-block;
+  padding:12px;
+  background-color:#52D273;
+  color:#fff;
+}
+.timeline-icon{
+  display:none;
+}
+
+/*
+@media all and (max-width: 1170px)
+{
+  .timeline-content img{
+    width:100%;
+    height:auto;
+  }
+}
+
+*/
