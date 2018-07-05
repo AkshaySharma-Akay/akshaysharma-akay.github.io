@@ -41,12 +41,12 @@ body{
 
 
 .header-link:first-child::before{
-    width: 13.5%;
-    left: 15.5%;
+    width: 7.5%;
+    left: 22.5%;
 }
 .header-link:last-child::before{
-    width: 13.5%;
-    right: 15.5%;
+    width: 7.5%;
+    right: 22.5%;
 }
 .header-link i{
     transition:all 0.5s ease-in;
