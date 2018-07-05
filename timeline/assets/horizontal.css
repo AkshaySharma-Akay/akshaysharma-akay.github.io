@@ -48,6 +48,15 @@ body{
     width: 13.5%;
     right: 15.5%;
 }
+.header-link i{
+    transition:all 0.5s ease-in;
+}
+.header-link::before{
+    transition:border 0.5s ease-in;
+}
 .header-link:hover::before{
     border:2px solid #000;
+}
+.header-link:hover i{
+    background-color:#000;
 }
