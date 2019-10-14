@@ -1,0 +1,14 @@
+::ng-deep body {
+    background-color: #fff;
+    font-family: 'Oswald', sans-serif;
+}
+
+#wrapper {
+    min-height: calc(100vh - (66px + 40px + 60px));
+}
+
+@media(max-width: 768px) {
+    #wrapper {
+        min-height: calc(100vh - (106PX + 60px));
+    }
+}
