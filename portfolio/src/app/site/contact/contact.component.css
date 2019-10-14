@@ -1,0 +1,26 @@
+::ng-deep #wrapper {
+    display: flex;
+    background-color: #efefef;
+}
+::ng-deep #page{
+    width:100%;
+    align-self: center;
+    background-color: transparent;
+}
+#contact{
+    height: 100%;
+    text-align: center;
+}
+#contact h1{
+    font-size:21px;
+    margin:0px;
+    padding:30px 0px;
+}
+.contact-social a{
+    color:  #3B3B3B;
+}
+.contact-social a i{
+    font-size:16px;
+    padding:10px;
+    margin:2px;
+}

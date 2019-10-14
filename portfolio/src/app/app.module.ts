@@ -8,6 +8,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { SiteMainComponent } from './site/site-main/site-main.component';
 import { HeaderComponent } from './site/header/header.component';
 import { FooterComponent } from './site/footer/footer.component';
+import { HomeComponent } from './site/home/home.component';
+import { ContactComponent } from './site/contact/contact.component';
+import { ProjectsComponent } from './site/projects/projects.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +19,9 @@ import { FooterComponent } from './site/footer/footer.component';
     SiteMainComponent,
     HeaderComponent,
     FooterComponent,
+    HomeComponent,
+    ContactComponent,
+    ProjectsComponent,
   ],
   imports: [
     BrowserModule,
