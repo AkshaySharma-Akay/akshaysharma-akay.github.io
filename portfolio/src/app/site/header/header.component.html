@@ -1,19 +1,19 @@
 <header id="header">
     <nav id="header-nav" class="navbar navbar-expand-lg navbar-light ">
         <div class='container'>
-            <a class="navbar-brand"  routerLink="/home">
+            <a class="navbar-brand" routerLink="/home">
                 <img src="../assets/akshay.jpg" alt="Akshay" />
                 <div class='navbar-brand-title'>
                     <h5>Akshay Sharma</h5>
                     <h6>Student : Master Of Computer Applications (NITK)</h6>
                 </div>
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+            <button (click)="toggleNavbar()" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
                 aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <div [ngClass]="{ 'show': navbarOpen }" class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav ml-auto">
                     <!--
                         <li class="nav-item active">
@@ -40,17 +40,25 @@
                     <li class="nav-item">
                         <a class="nav-link" routerLink="/contact">Get In Touch</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://github.com/AkshaySharma-Akay"><i class='fab fa-github'></i></a>
+                    <li class="nav-item nav-social-icon">
+                        <a class="nav-link" href="https://github.com/AkshaySharma-Akay">
+                            <fa-icon [icon]="['fab', 'github']"></fa-icon>
+                        </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="mailto:akshaysharmaak2@gmail.com"><i class='fa fa-envelope'></i></a>
+                    <li class="nav-item nav-social-icon">
+                        <a class="nav-link" href="mailto:akshaysharmaak2@gmail.com">
+                            <fa-icon [icon]="['fas', 'envelope']"></fa-icon>
+                        </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://stackoverflow.com/users/6835756/akshay-sharma"><i class='fab fa-stack-overflow'></i></a>
+                    <li class="nav-item nav-social-icon">
+                        <a class="nav-link" href="https://stackoverflow.com/users/6835756/akshay-sharma">
+                            <fa-icon [icon]="['fab', 'stack-overflow']"></fa-icon>
+                        </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://www.linkedin.com/in/akshay-sharma-akay/"><i class='fab fa-linkedin'></i></a>
+                    <li class="nav-item nav-social-icon">
+                        <a class="nav-link" href="https://www.linkedin.com/in/akshay-sharma-akay/">
+                            <fa-icon [icon]="['fab', 'linkedin']"></fa-icon>
+                        </a>
                     </li>
                 </ul>
             </div>

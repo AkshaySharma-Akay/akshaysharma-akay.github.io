@@ -53,4 +53,7 @@
     #header-nav .navbar-brand h6{
         display: none;
     }
+    .nav-social-icon{
+        display: none;
+    }
 }
