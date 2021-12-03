@@ -39,7 +39,7 @@ h1,h2,h3,h4,h5,h6,button{
 }
 .header-nav ul{
     display: flex;
-    justify-self: center;
+    justify-content: center;
 }
 .header-nav a{
     display: inline-block;
@@ -240,6 +240,13 @@ h1,h2,h3,h4,h5,h6,button{
 @media all and (max-width: 768px){
     #header{
         display: block;
+        padding:7px 0px;
+    }
+    .header-nav a {
+        padding: 0px 10px;
+    }
+    #wrapper{
+        min-height: calc(100vh - 51px - 20px - 82px);
     }
     #profile img{
         margin:0px;
