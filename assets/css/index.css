@@ -1,0 +1,240 @@
+body{
+    margin:0px;
+    background-color: #fafafa;
+}
+/* https://coolors.co/ffffff-fafafa-000000-39a2ae-f46036/ */
+h1,h2,h3,h4,h5,h6,ul,p{
+    margin:0px;
+}
+li{
+    list-style: none;
+}
+*{
+    font-family: 'Quattrocento', serif;
+}
+h1,h2,h3,h4,h5,h6,button{
+    font-family: 'Oswald', sans-serif;
+}
+/* ===============================  */
+#header{
+    background-color: #fff;
+    padding:6px 100px; 
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ededed;
+}
+.header-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header-title h1{
+    font-size: 16px;
+    font-weight: normal;
+}
+.header-nav ul li{
+    list-style: none;
+}
+.header-nav ul{
+    display: flex;
+    justify-self: center;
+}
+.header-nav a{
+    display: inline-block;
+    color:#000;
+    padding:10px;
+    margin:0px 10px;
+    font-size: 16px;
+}
+
+@media all and (max-width: 768px){
+    #header{
+        justify-content: center;
+    }
+}
+/* =========================================== */
+#wrapper{
+    min-height: calc(100vh - 51px - 20px - 74px);
+}
+#footer{
+    background-color: #fff;
+    padding:15px 100px;
+    margin-top: 20px;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    border-top: 1px solid #ededed;
+}
+/* ====================================== */
+
+#profile{
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    padding:20px;
+    margin:25px 0px;
+}
+#profile img{
+    width:120px;
+    height:120px;
+    border-radius: 50%;
+    margin:0px 30px;
+    border:5px solid #fff;
+}
+#profile h1{
+    font-size: 32px;
+    font-weight: normal;
+}
+#profile h3{
+    font-size: 18px;
+    font-weight: normal;
+}
+
+/* ====================================== */
+#navbar{
+    margin:0px 100px 40px;
+    box-shadow: 0px 23px 36px -26px #000;
+}
+#navbar ul{
+    display: flex;
+    justify-content: center;
+}
+#navbar button{
+    display: flex;
+    align-items: center;
+    font-family: 'Oswald', sans-serif;
+    border:none;
+    cursor: pointer;
+    font-size: 16px;
+    margin:0px 10px;
+    padding:15px;
+    background-color: transparent;
+    color:#555;
+    transition: all 0.5s ease-in;
+}
+#navbar button i{
+    display: inline-block;
+    font-size: 14px;
+    padding:0px 8px 0px 0px;
+}
+#navbar button:hover, #navbar button.active{
+    color:#000;
+}
+
+/* ======================= */
+
+#page-wrapper{
+    padding:0px 100px;
+}
+#experience{
+    display: flex;
+    justify-content: space-between;
+}
+#experience h3{
+    font-size: 20px;
+}
+.timeline{
+    display: flex;
+    flex-wrap: wrap;
+    width:60%;
+    box-shadow: 29px 0px 46px -76px #000;
+}
+/* .timeline-card:nth-child(odd){
+    background-color: #FF8360;
+}*/
+.timeline-card:nth-child(even){
+    /* background-color: #ef6461; */
+    margin-left:10%;
+} 
+.timeline-card{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    width:calc(80% - 120px);
+    padding:20px 50px;
+    margin:10px;
+    color:#000;
+    /* box-shadow: 0px 15px 21px -30px #000; */
+    border:1px solid #ededed;
+    border-bottom: 4px double #333;
+    /* border:1px solid #555; */
+}
+.timeline-card span.card-date{
+    font-size: 14px;
+}
+.timeline-card span{
+    font-size: 18px;
+    font-family: 'Oswald', sans-serif;
+}
+.experience-sidebar{
+    margin-left: 30px;
+}
+.experience-sidebar div{
+    margin-bottom: 15px;
+}
+
+/* ================================================ */
+.project-card{
+    padding:10px 0px;
+    border-bottom: 4px double #333;
+}
+.project-card h3{
+    font-size: 20px;
+}
+.project-card-urls a{
+    display: inline-block;
+    text-decoration: none;
+    padding:10px 0px 0px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color:#496DDB;
+    border-bottom: 1px solid #496DDB;
+    font-family: 'Oswald', sans-serif;
+}
+.project-card p{
+    font-size: 18px;
+}
+/* ==================================================== */
+#contact{
+    justify-content: center;
+}
+.card{
+    padding:20px;
+    font-size: 20px;
+}
+.card li{
+    padding:5px 0px;
+}
+.card span{
+    font-weight: bold;
+    display: inline-block;
+    min-width: 80px;
+    text-align: right;
+    margin-right: 10px;
+}
+.card-social{
+    display: flex;
+    justify-content: center;
+}
+.card a{
+    color:#496DDB;
+}
+.card-social a{
+    display: inline-block;
+    padding:10px;
+    color:#000
+}
+/* ================================================ */
+#about, #projects{
+    animation: fadeIn;
+}
+#experience ,#contact{
+    animation: fadeIn;
+}
+#about, #experience, #projects, #contact{
+    animation-duration: 1s; 
+}
+#experience, #projects, #contact{
+    display: none;
+}
