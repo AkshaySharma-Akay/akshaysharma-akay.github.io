@@ -6,8 +6,10 @@ body{
 h1,h2,h3,h4,h5,h6,ul,p{
     margin:0px;
 }
-li{
+ul,li{
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 *{
     font-family: 'Quattrocento', serif;
@@ -45,12 +47,6 @@ h1,h2,h3,h4,h5,h6,button{
     padding:10px;
     margin:0px 10px;
     font-size: 16px;
-}
-
-@media all and (max-width: 768px){
-    #header{
-        justify-content: center;
-    }
 }
 /* =========================================== */
 #wrapper{
@@ -237,4 +233,86 @@ h1,h2,h3,h4,h5,h6,button{
 }
 #experience, #projects, #contact{
     display: none;
+}
+
+/* ============================================================== */
+
+@media all and (max-width: 768px){
+    #header{
+        display: block;
+    }
+    #profile img{
+        margin:0px;
+    }
+    #profile{
+        justify-content: space-around;
+    }
+    #profile h1{
+        font-size: 20px;
+    }
+    #profile h3{
+        font-size: 16px;
+    }
+
+    #navbar{
+        margin:0px;
+        box-shadow: none;
+    }
+    #navbar ul{
+        padding:0px;
+        flex-wrap: nowrap;
+        font-size: 14px;
+        overflow-x: scroll;
+    }
+    #navbar button{
+        font-size: 14px;
+        margin: 0px 4px;
+        padding: 15px 5px;
+    }
+
+    #page-wrapper{
+        padding:0px 20px;
+    }
+    #page-wrapper span, #page-wrapper p{
+        font-size: 14px;
+    }
+
+    #experience{
+        flex-direction: column;
+    }
+    #experience h3, #projects h3{
+        font-size: 16px;
+    }
+    .project-card-urls a{
+        font-size: 14px;
+    }
+    .timeline{
+        width:100%;
+    }
+    .timeline-card{
+        width:100%;
+        padding:10px 15px;
+        margin:5px;
+    }
+    .timeline-card .card-date{
+        font-size: 14px;
+    }
+    .timeline-card:nth-child(even){
+        margin-left:5px;
+    }
+    .experience-sidebar{
+        margin-top: 10px;
+        margin-left: 0px;
+    }
+    #contact .card{
+        font-size: 14px;
+    }
+    #contact .card span{
+        display: inline;
+    }
+    #footer{
+        padding-left:10px;
+        padding-right: 10px;
+        font-size: 14px;
+    }
 }
