@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f0f0; /* Light grey background */
+}
+
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: space-around;
+    align-items: center;
+}
+#page{
+    display: flex;
+    justify-content: space-around;
+}
+.container {
+    display: flex;
+    justify-content: flex-end; /* Adjust as needed: flex-start, center, flex-end */
+    height: 100vh;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 350px; /* Adjust the width as needed */
+    margin-right: 20px; /* Add margin for spacing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Minimalistic box shadow */
+    background-color: #fff; /* Default background color */
+    transition: background-color 0.5s ease-in-out; /* Cool color transition animation */
+}
+
+.spacer {
+    height: 20px; /* Adjust the spacing between grids */
+}
+
+.cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    text-align: center;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.cell:hover {
+    background-color: #e5e5e5; /* Light grey on hover for a subtle effect */
+}
+
+.obstacle {
+    background-color: #e74c3c; /* Red for obstacle cells */
+    color: #fff; /* White text on obstacle cells */
+}
+
+.start{
+    background-color: #f39c12; /* Orange background when processing begins */
+    color: #fff; /* White text when processing begins */
+}
+
+.visited {
+    background-color: #3498db; /* Bright blue for visited cells */
+    color: #fff; /* White text on the visited cell */
+}
+
+.obstacle.visited {
+    background-color: #d35400; /* Change the color to your desired value for visited obstacle cells */
+    color: #fff; /* Change the text color for better visibility if needed */
+}
+
+@keyframes flashAnimation {
+    0% {
+        background-color: #5bc0de; /* Initial color (soft blue) */
+        color: #333; /* Initial text color (dark grey) */
+    }
+    50% {
+        background-color: #fff; /* Midway color (white) */
+        color: #5bc0de; /* Midway text color (soft blue) */
+    }
+    100% {
+        background-color: #5bc0de; /* Final color (soft blue) */
+        color: #333; /* Final text color (dark grey) */
+    }
+}
+
+
+.cell.start {
+    animation: flashAnimation 1s infinite; /* Flashing animation with a 1-second duration, repeat indefinitely */
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Smoother transition between colors */
+}
