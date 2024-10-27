@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="./assets/styles/layout.css" rel="stylesheet"> 
+    <link href="./assets/styles/header.css" rel="stylesheet">
+    <!-- <link rel="icon" type="image/x-icon" href="/assets/akshay.jpg"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap">
+    <title>Akshay</title>
+</head>
+
+<body class="bg-[var(--color-bg)] text-[var(--color-text)] font-nunito">
+    <header id="header" class="fixed top-0 w-full bg-white shadow-md z-50">
+        <div class="flex justify-between items-center p-4 max-w-6xl mx-auto">
+            <nav class="hidden md:flex justify-between items-center space-x-6">
+                <a href="https://imakshay.me" class="hover:text-blue-600"><i class="fa fa-house"></i></a>
+                <a href="#projects" class="font-montserrat font-medium text-sm hover:text-blue-700">PROJECTS</a>
+                <a href="#blog" class="font-montserrat font-medium text-sm hover:text-blue-700">BLOG</a>
+                <a href="#projects" class="font-montserrat font-medium text-sm text-blue-500 hover:text-blue-700">LET'S
+                    CONNECT</a>
+            </nav>
+            <div class="hidden md:flex space-x-8">
+                <a href="mailto:akshaysharmaak2@gmail.com" target="_blank" class="text-l hover:text-blue-600"><i
+                        class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/akshay-sharma-akay/" target="_blank"
+                    class="text-l hover:text-blue-600"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/AkshaySharma-Akay" target="_blank" class="text-l hover:text-blue-600"><i
+                        class="fab fa-github"></i></a>
+            </div>
+            <!-- Mobile Menu Toggle Button -->
+            <button onclick="toggleMenu()"
+                class="md:hidden flex justify-between items-center text-gray-700 focus:outline-none w-full">
+                <a href="https://imakshay.me" class="text-gray-700 hover:text-blue-600"><i class="fa fa-house"></i></a>
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="fixed top-16 left-0 w-full bg-white shadow-md hidden md:hidden">
+            <nav class="flex flex-col items-center space-y-4 p-6">
+                <a href="#projects" class="font-montserrat font-medium text-sm hover:text-blue-700">PROJECTS</a>
+                <a href="#blog" class="font-montserrat font-medium text-sm hover:text-blue-700">BLOG</a>
+                <!-- Social Media Links in a Row -->
+                <div class="flex justify-between space-x-6">
+                    <a href="mailto:akshaysharmaak2@gmail.com" target="_blank"
+                        class="text-gray-700 hover:text-blue-600"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/akshay-sharma-akay/" target="_blank"
+                        class="text-gray-700 hover:text-blue-600"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/AkshaySharma-Akay" target="_blank"
+                        class="text-gray-700 hover:text-blue-600"><i class="fab fa-github"></i></a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Top Banner -->
+    <div class="mt-[56px] bg-blue-500 text-white py-2 text-center">
+        <p>Unlock possibilities together. Let's connect on <a href="https://www.linkedin.com/in/akshay-sharma-akay/"
+                target="_blank" class="underline">LinkedIn</a></p>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="w-full bg-[var(--color-bg-light-gray)] py-5 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <!-- Left Section: Profile, Name, and Introduction -->
+                <div>
+                    <h1 class="text-5xl font-bold text-gray-900 mb-6">Akshay Sharma</h1>
+                    <p class="text-xl text-gray-600 mb-4">Backend Developer | 4+ Years Experience</p>
+                    <p class="text-gray-600 mb-8">
+                        I’m into crafting systems with Java and Spring Boot, finding ways to make them impactful and
+                        efficient.
+                        I’m still exploring, learning, and occasionally overengineering just for the challenge.
+                    </p>
+                    <!-- Call to Action Buttons -->
+                    <div class="flex space-x-4 mt-8">
+                        <a href="https://github.com/AkshaySharma-Akay/AutoDocs"
+                            class="bg-blue-500 text-white px-6 py-3 rounded-md hover:bg-blue-600">
+                            Check out AutoDocs
+                        </a>
+                        <a href="#projects"
+                            class="border border-blue-500 text-blue-500 px-6 py-3 rounded-md hover:bg-blue-50">
+                            More Projects
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Section: AutoDocs Project Showcase -->
+                <div class="flex flex-col items-center">
+                    <div class="w-full bg-gray-100 p-4 rounded-lg shadow-lg mb-8">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">AutoDocs Project</h3>
+                        <p class="text-gray-700 text-sm mb-2">
+                            Automated PDF reports for sorting marks data from Excel files with Node.js, eliminating
+                            repetitive
+                            tasks and boosting productivity.
+                        </p>
+                        <pre class="bg-gray-800 text-gray-200 text-sm p-4 rounded-lg overflow-x-auto">
+<span class="text-blue-400">// Node.js PDF Generation Example</span>
+const PDFDocument = require('pdfkit');
+const fs = require('fs');
+
+function generateReport(data) {
+    const doc = new PDFDocument();
+    doc.pipe(fs.createWriteStream('Report.pdf'));
+    doc.text('Generated Report', { align: 'center' });
+    // Process and format data here...
+    doc.end();
+}
+generateReport(data);
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Projects -->
+    <!-- Featured Projects -->
+    <div class="w-full bg-[var(--color-bg)] py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-12">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-500 mb-2">MyPress</h3>
+                        <p class="text-gray-600 mb-4">A CMS App with Django</p>
+                        <span
+                            class="inline-block bg-blue-100 text-blue-500 px-3 py-1 rounded-full text-sm">Python</span>
+                        <span
+                            class="inline-block bg-blue-100 text-blue-500 px-3 py-1 rounded-full text-sm">Backend</span>
+                        <span
+                            class="inline-block bg-blue-100 text-blue-500 px-3 py-1 rounded-full text-sm">Django</span>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-500 mb-2">Distributed Cron</h3>
+                        <p class="text-gray-600 mb-4">Scalable job scheduler system</p>
+                        <span class="inline-block bg-blue-100 text-blue-500 px-3 py-1 rounded-full text-sm">Java</span>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-500 mb-2">AutoDocs</h3>
+                        <p class="text-gray-600 mb-4">Eliminating Manual Sorting with NodeJs</p>
+                        <span
+                            class="inline-block bg-blue-100 text-blue-500 px-3 py-1 rounded-full text-sm">NodeJS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Footer -->
+    <footer class="bg-white border-t">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="flex justify-between items-center">
+                <p class="text-gray-600">© AKSHAY | ALL RIGHTS RESERVED</p>
+                <div class="flex space-x-6">
+                    <a href="mailto:akshaysharmaak2@gmail.com" target="_blank" class="text-xl hover:text-blue-600"><i
+                            class="fas fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/akshay-sharma-akay/" target="_blank"
+                        class="text-xl hover:text-blue-600"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/AkshaySharma-Akay" target="_blank"
+                        class="text-xl hover:text-blue-600"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        }
+    </script>
+</body>
+
+</html>
