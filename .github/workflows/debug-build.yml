@@ -1,0 +1,45 @@
+name: Debug Build Process
+
+on:
+  workflow_dispatch:
+
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: List files
+        run: |
+          echo "=== Root directory ==="
+          ls -la
+          echo "=== Blog directory ==="
+          ls -la blog/
+          echo "=== Blog posts ==="
+          ls -la blog/_posts/
+          
+      - name: Check Jekyll config
+        run: |
+          echo "=== Jekyll config ==="
+          cat blog/_config.yml
+          
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+          bundler-cache: true
+          working-directory: ./blog
+          
+      - name: Test Jekyll build
+        run: |
+          cd blog
+          bundle install
+          bundle exec jekyll build --destination ../test-site --baseurl "/blog" --verbose
+          
+      - name: Check build output
+        run: |
+          echo "=== Build output ==="
+          ls -la test-site/
+          echo "=== Blog build output ==="
+          find test-site/ -name "*.html" | head -10

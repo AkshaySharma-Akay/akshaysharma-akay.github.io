@@ -2,9 +2,8 @@ name: Build and Deploy Jekyll Blog
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches: [ main, master ]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -36,18 +35,21 @@ jobs:
       - name: Build Jekyll site
         run: |
           cd blog
-          bundle exec jekyll build --destination ../_site/blog
+          bundle install
+          bundle exec jekyll build --destination ../_site/blog --baseurl "/blog"
         env:
           JEKYLL_ENV: production
           
       - name: Copy main site files
         run: |
+          mkdir -p _site
           cp index.html _site/
           cp -r assets _site/ 2>/dev/null || true
-          cp -r *.html _site/ 2>/dev/null || true
           
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./_site
 
   deploy:
     environment:
