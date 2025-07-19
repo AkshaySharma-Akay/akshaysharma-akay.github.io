@@ -60,18 +60,18 @@ layout: default
 <nav class="w-full bg-gray-50 py-8">
     <div class="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
         <div class="flex justify-between items-center">
-            <a href="/blog" class="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium">
+            <a href="{{ '/blog/' | relative_url }}" class="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium">
                 <i class="fas fa-arrow-left mr-2"></i>
                 Back to Blog
             </a>
             <div class="flex space-x-4">
                 {% if page.previous.url %}
-                <a href="{{ page.previous.url }}" class="text-gray-600 hover:text-blue-600 text-sm">
+                <a href="{{ page.previous.url | relative_url }}" class="text-gray-600 hover:text-blue-600 text-sm">
                     ← {{ page.previous.title | truncate: 30 }}
                 </a>
                 {% endif %}
                 {% if page.next.url %}
-                <a href="{{ page.next.url }}" class="text-gray-600 hover:text-blue-600 text-sm">
+                <a href="{{ page.next.url | relative_url }}" class="text-gray-600 hover:text-blue-600 text-sm">
                     {{ page.next.title | truncate: 30 }} →
                 </a>
                 {% endif %}

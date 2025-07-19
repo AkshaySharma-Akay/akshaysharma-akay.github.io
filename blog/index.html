@@ -32,7 +32,7 @@ title: Blog
                         <time class="text-sm text-gray-500 font-mono">{{ post.date | date: "%B %d, %Y" }}</time>
                     </div>
                     <h2 class="text-xl font-bold text-gray-900 mb-3 leading-tight">
-                        <a href="{{ post.url }}" class="hover:text-blue-600 transition-colors">
+                        <a href="{{ post.url | relative_url }}" class="hover:text-blue-600 transition-colors">
                             {{ post.title }}
                         </a>
                     </h2>
@@ -49,7 +49,7 @@ title: Blog
                     </div>
                     {% endif %}
                     
-                    <a href="{{ post.url }}" class="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium text-sm">
+                    <a href="{{ post.url | relative_url }}" class="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium text-sm">
                         Read More
                         <i class="fas fa-arrow-right ml-2 text-xs"></i>
                     </a>
