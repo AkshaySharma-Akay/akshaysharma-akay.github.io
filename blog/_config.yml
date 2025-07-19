@@ -23,7 +23,7 @@ email: akshaysharmaak2@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Building systems, exploring design, and sharing ideas. A blog about 
   web development, automation, and modern software practices.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/blog" # the subpath of your site, e.g. /blog
 url: "https://imakshay.me" # the base hostname & protocol for your site
 twitter_username: 
 github_username: AkshaySharma-Akay
