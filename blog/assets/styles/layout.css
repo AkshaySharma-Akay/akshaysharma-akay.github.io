@@ -1,0 +1,30 @@
+:root {
+    --color-bg-white: #FFFFFF;         /* Main white background */
+    --color-bg-light-gray: #FAFAFA;    /* Light gray for sections */
+    --color-bg-very-light-gray: #F5F5F5;/* Very light gray for cards */
+    --color-primary: #3B82F6; /* Primary color (Blue) */
+    --color-secondary: #2563EB; /* Darker Blue */
+    --color-accent: #34D399; /* Accent color (Green) */
+    --color-accent-light: #A7F3D0; /* Light Green */
+    --color-gray: #D1D5DB; /* Light Gray */
+}
+
+html{
+    scroll-behavior: smooth;
+}
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+/* .hero-gradient {
+    background-color: var(--hero-bg-color);
+}
+
+.featured-section {
+    background-color: var(--featured-bg-color);
+} */
+.separator {
+    height: 4px; /* Adjust the height as needed */
+    background-color: #E0E0E0; /* Subtle color for the separator */
+}

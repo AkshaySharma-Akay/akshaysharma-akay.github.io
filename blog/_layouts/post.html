@@ -1,0 +1,81 @@
+---
+layout: default
+---
+
+<article class="w-full bg-white py-12">
+    <div class="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
+        <!-- Article Header -->
+        <header class="mb-12">
+            <div class="mb-6">
+                <time class="text-sm text-gray-500 font-mono">{{ page.date | date: "%B %d, %Y" }}</time>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">{{ page.title }}</h1>
+            
+            <!-- Tags -->
+            {% if page.tags %}
+            <div class="flex flex-wrap gap-3 mb-8">
+                {% for tag in page.tags %}
+                <span class="inline-block bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium">{{ tag }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+            
+            <!-- Decorative line -->
+            <div class="w-full flex justify-start mb-8">
+                <svg width="120" height="4" viewBox="0 0 120 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 2 Q30 0, 60 2 T118 2" stroke="#2563EB" stroke-width="2" stroke-linecap="round" fill="none"/>
+                </svg>
+            </div>
+        </header>
+
+        <!-- Article Content -->
+        <div class="prose prose-lg prose-blue max-w-none">
+            <div class="text-gray-700 leading-relaxed space-y-6">
+                {{ content }}
+            </div>
+        </div>
+
+        <!-- Article Footer -->
+        <footer class="mt-16 pt-8 border-t border-gray-200">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                <div class="text-sm text-gray-500">
+                    Published on {{ page.date | date: "%B %d, %Y" }}
+                </div>
+                <div class="flex space-x-4">
+                    <a href="https://www.linkedin.com/in/akshay-sharma-akay/" target="_blank" 
+                       class="text-gray-400 hover:text-blue-600 transition-colors">
+                        <i class="fab fa-linkedin text-lg"></i>
+                    </a>
+                    <a href="https://github.com/AkshaySharma-Akay" target="_blank" 
+                       class="text-gray-400 hover:text-blue-600 transition-colors">
+                        <i class="fab fa-github text-lg"></i>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</article>
+
+<!-- Navigation -->
+<nav class="w-full bg-gray-50 py-8">
+    <div class="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div class="flex justify-between items-center">
+            <a href="/blog" class="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium">
+                <i class="fas fa-arrow-left mr-2"></i>
+                Back to Blog
+            </a>
+            <div class="flex space-x-4">
+                {% if page.previous.url %}
+                <a href="{{ page.previous.url }}" class="text-gray-600 hover:text-blue-600 text-sm">
+                    ← {{ page.previous.title | truncate: 30 }}
+                </a>
+                {% endif %}
+                {% if page.next.url %}
+                <a href="{{ page.next.url }}" class="text-gray-600 hover:text-blue-600 text-sm">
+                    {{ page.next.title | truncate: 30 }} →
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</nav>
