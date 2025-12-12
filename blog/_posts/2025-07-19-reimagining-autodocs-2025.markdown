@@ -6,9 +6,6 @@ categories: [projects, automation]
 tags: [nodejs, automation, pdf-generation, excel, productivity, system-design]
 excerpt: "A deep dive into the AutoDocs project - from its original Node.js implementation to how I would architect it today with modern tools and practices."
 ---
-
-# Reimagining AutoDocs: How I'd Build It in 2025
-
 When I first built AutoDocs, it solved a real problem: automating the tedious process of generating PDF reports from Excel data. What started as a simple Node.js script evolved into a productivity tool that eliminated hours of manual work. Today, I want to share the journey and explore how I'd approach this project with modern tools and practices.
 
 ## The Original Problem
