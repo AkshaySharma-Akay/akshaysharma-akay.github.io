@@ -8,7 +8,13 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-        gtag('config', 'G-H41739MRVS');
+        gtag('config', 'G-H41739MRVS', {
+            'page_title': '{{ page.title | default: site.title }}',
+            'page_path': '{{ page.url }}',
+            {% if page.categories %}'content_group': '{{ page.categories | first }}',{% endif %}
+            {% if page.tags %}'page_tags': '{{ page.tags | join: ", " }}',{% endif %}
+            {% if page.date %}'publish_date': '{{ page.date | date: "%Y-%m-%d" }}',{% endif %}
+        });
     </script>
 
     <meta charset="UTF-8">
