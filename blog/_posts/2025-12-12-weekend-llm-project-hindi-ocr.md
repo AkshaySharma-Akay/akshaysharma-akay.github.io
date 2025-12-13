@@ -10,13 +10,13 @@ description: "A developer-friendly case study on building a Hindi OCR pipeline w
 canonical_url: "https://imakshay.me/blog/projects/ai/automation/2025/12/12/weekend-llm-project-hindi-ocr.html"
 cover_image: /blog/assets/images/covers/my_cover.jpg
 ---
-I grew up with a father whose entire world revolved around education teacher, writer often switching between roles, but always working in **Hindi**. That naturally made me and my siblings the tech supports at home. Over the years, we typed his academic papers in Kruti Dev fonts, maintained these documents, and built archives of his work on Google Drive and pen drives.
+I grew up in a household where education was everything. My father—a teacher and writer who often switched between roles—spent his entire career working in **Hindi**. That naturally made me and my siblings the tech support at home. Over the years, we typed his academic papers in Kruti Dev fonts, maintained these documents, and built archives of his work on Google Drive and pen drives.
 
 Among all those tasks, one problem kept returning like a stubborn bug:
 
 ### **Typing handwritten pages.**
 
-If my father had written 10–20 pages by hand, turning them into a typed Word or PDF document required either:
+Whenever he had written 10–20 pages by hand, turning them into a typed Word or PDF document required either:
 - paying someone to type it, or
 - learning MS Word + Hindi typing, or
 - asking me / siblings
@@ -36,7 +36,7 @@ This became one of those side projects that follows you for year, too small to c
 
 ---
 
-# **Hindi OCR Attempt #1 (2022–2023): Traditional Machine Learning Fails**
+## Hindi OCR Attempt #1 (2022–2023): Traditional Machine Learning Fails
 
 Back in 2022, the only way to solve this realistically was through **OCR + Machine Learning**.
 
@@ -64,7 +64,7 @@ So I dropped it.
 
 ---
 
-# **Solution Attempt #2 (End of 2025): LLMs Change the Game**
+## Solution Attempt #2 (End of 2025): LLMs Change the Game
 
 Fast forward to 2025.
 
@@ -77,26 +77,18 @@ Spoiler: yes.
 
 ---
 
-# **1. User Research (aka Conversations With Home Users)**
+## User Research: Conversations With Home Users
 
-Before building anything, I decided to treat my father as an actual user and asked three simple questions.
+Before building anything, I decided to validate the problem. I asked three simple questions to understand the actual workflow.
 
----
+**Q1: How much do you pay nowadays to get things typed?**
+> "Not much anymore."
 
-### **Q1: How much do you pay nowadays to get things typed?**
+**Q2: Have you tried ChatGPT or Gemini for it?**
+> "No. Students use it… but we don't understand it."
 
-> “Not much anymore.”
-> 
-
-### **Q2: Have you tried ChatGPT or Gemini for it?**
-
-> “No. Students use it… but we don’t understand it.”
-> 
-
-### **Q3: What tool do you use today?”**
-
-> “WhatsApp.”
-> 
+**Q3: What tool do you use today?"**
+> "WhatsApp."
 
 ---
 
@@ -106,9 +98,9 @@ But it made perfect sense.
 
 ### **The WhatsApp Workflow**
 
-Here’s what the “real-world” workflow looked like:
+Here's what the "real-world" workflow looked like:
 
-- My father records voice notes.
+- Voice notes are recorded in Hindi.
 - WhatsApp converts them to text.
 - My siblings copy-paste from WhatsApp Web → MS Word.
 - They print and publish.
@@ -120,7 +112,7 @@ A reminder that good products don’t beat other products, they beat **existing 
 
 ---
 
-# **2. Building the MVP With LLMs**
+## Building the MVP With LLMs
 
 Once I started experimenting, I realized:
 
@@ -147,7 +139,7 @@ A problem that felt *months long* in 2022 had become a *weekend experiment* in 2
 
 ---
 
-# **The New LLM Workflow (Diagram)**
+## The New LLM Workflow
 
 ```mermaid
 flowchart TD
@@ -169,7 +161,7 @@ flowchart TD
 
 ---
 
-# **The Old Workflow (For Contrast)**
+## The Old Workflow (For Contrast)
 
 ```mermaid
 flowchart TD
@@ -183,7 +175,7 @@ flowchart TD
 
 ---
 
-# **The Prompt That Powered the System**
+## The Prompt That Powered the System
 
 ```
 You are an OCR expert.
@@ -202,7 +194,7 @@ This tiny piece of text did more heavy lifting than months of ML experimentation
 
 ---
 
-# **The Core Code (Simplified - Of course in Python)**
+## The Core Code (Simplified)
 
 ```python
     client = get_gemini_client()
@@ -226,9 +218,9 @@ This tiny piece of text did more heavy lifting than months of ML experimentation
 
 ---
 
-# **Conclusion**
+## Conclusion
 
-What once felt like months of work is now a weekend project, and that alone shows how fast things are changing. Building my first agentic flow during the hackathon—and now an even simpler LLM script—spiked my curiosity again. It’s tempting to extend this into a bigger product, but not every problem needs a hammer.
+What once felt like months of work is now a weekend project, and that alone shows how fast things are changing. Building my first agentic flow during the hackathon—and now an even simpler LLM script—spiked my curiosity again. It's tempting to extend this into a bigger product, but not every problem needs a hammer.
 
 There are still real questions around privacy, data usage, product fit, and ROI.
 
@@ -236,10 +228,10 @@ Some ideas turn into companies.
 
 Some simply make life easier for the people around you.
 
-This script does the latter—and for now, that’s more than enough.
+This script does the latter—and for now, that's more than enough.
 
 ---
 
-# **Coming in Part 2**
+## Coming in Part 2
 
 ***Real-world accuracy tests and other findings, failure cases, full code, and the GitHub repository and all youtube and documentation references.***
