@@ -8,8 +8,10 @@ tags: [llm, gemini, hindi-ocr, python, automation, agentic-ai, case-study, ocr]
 excerpt: "How a painful handwritten Hindi typing workflow turned into a weekend OCR pipeline powered by Gemini and Python."
 description: "A developer-friendly case study on building a Hindi OCR pipeline with Gemini LLMs, Python, and prompt engineering—turning handwritten pages into typed documents automatically."
 canonical_url: "https://imakshay.me/blog/projects/ai/automation/2025/12/12/weekend-llm-project-hindi-ocr.html"
-cover_image: /blog/assets/images/covers/my_cover.jpg
+cover_image: /assets/images/covers/hindi-ocr-llm-gemini-python-cover.jpg
 ---
+
+## Background Story
 I grew up in a household where education was everything. My father—a teacher and writer who often switched between roles—spent his entire career working in **Hindi**. That naturally made me and my siblings the tech support at home. Over the years, we typed his academic papers in Kruti Dev fonts, maintained these documents, and built archives of his work on Google Drive and pen drives.
 
 Among all those tasks, one problem kept returning like a stubborn bug:
