@@ -132,6 +132,22 @@ layout: default
         padding-left: 24px;
     }
 
+    /* Mermaid Diagrams */
+    .mermaid-diagram {
+        background: #fafaf9;
+        padding: 24px;
+        border-radius: 8px;
+        border: 1px solid #e7e5e4;
+        margin: 24px 0;
+        overflow-x: auto;
+        text-align: center;
+    }
+
+    .mermaid-diagram svg {
+        max-width: 100%;
+        height: auto;
+    }
+
     /* Code Blocks - Soft purple background like GitHub/Stripe */
     article pre {
         background: #fafaf9;
@@ -553,6 +569,44 @@ layout: default
 
             // Observe all headings
             headings.forEach(heading => observer.observe(heading));
+        }
+    });
+</script>
+
+<!-- Mermaid.js for diagrams -->
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+    mermaid.initialize({
+        startOnLoad: false,
+        theme: 'neutral',
+        flowchart: {
+            useMaxWidth: true,
+            htmlLabels: true,
+            curve: 'basis'
+        }
+    });
+
+    // Find all mermaid code blocks and render them
+    document.addEventListener('DOMContentLoaded', async function() {
+        const codeBlocks = document.querySelectorAll('pre code.language-mermaid');
+
+        for (let i = 0; i < codeBlocks.length; i++) {
+            const code = codeBlocks[i];
+            const pre = code.parentElement;
+            const mermaidCode = code.textContent;
+
+            // Create a container for the diagram
+            const container = document.createElement('div');
+            container.className = 'mermaid-diagram';
+
+            try {
+                const { svg } = await mermaid.render(`mermaid-${i}`, mermaidCode);
+                container.innerHTML = svg;
+                pre.replaceWith(container);
+            } catch (error) {
+                console.error('Mermaid rendering error:', error);
+            }
         }
     });
 </script>
