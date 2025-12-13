@@ -12,7 +12,7 @@ cover_image: /assets/images/covers/hindi-ocr-llm-gemini-python-cover.jpg
 ---
 
 ## Background Story
-I grew up in a household where education was everything. My father—a teacher and writer who often switched between roles—spent his entire career working in **Hindi**. That naturally made me and my siblings the tech support at home. Over the years, we typed his academic papers in Kruti Dev fonts, maintained these documents, and built archives of his work on Google Drive and pen drives.
+I grew up in a household where education was everything. My father, a teacher and writer who often switched between roles, spent his entire career working in **Hindi**. That naturally made me and my siblings the tech support at home. Over the years, we typed his academic papers in Kruti Dev fonts, maintained these documents, and built archives of his work on Google Drive and pen drives.
 
 Among all those tasks, one problem kept returning like a stubborn bug:
 
@@ -222,7 +222,7 @@ This tiny piece of text did more heavy lifting than months of ML experimentation
 
 ## Conclusion
 
-What once felt like months of work is now a weekend project, and that alone shows how fast things are changing. Building my first agentic flow during the hackathon—and now an even simpler LLM script—spiked my curiosity again. It's tempting to extend this into a bigger product, but not every problem needs a hammer.
+What once felt like months of work is now a weekend project, and that alone shows how fast things are changing. Building my first agentic flow during the hackathon and now an even simpler LLM script—spiked my curiosity again. It's tempting to extend this into a bigger product, but not every problem needs a hammer.
 
 There are still real questions around privacy, data usage, product fit, and ROI.
 
