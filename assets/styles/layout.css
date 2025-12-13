@@ -1,12 +1,34 @@
 :root {
-    --color-bg-white: #FFFFFF;         /* Main white background */
-    --color-bg-light-gray: #FAFAFA;    /* Light gray for sections */
-    --color-bg-very-light-gray: #F5F5F5;/* Very light gray for cards */
-    --color-primary: #3B82F6; /* Primary color (Blue) */
-    --color-secondary: #2563EB; /* Darker Blue */
-    --color-accent: #34D399; /* Accent color (Green) */
-    --color-accent-light: #A7F3D0; /* Light Green */
-    --color-gray: #D1D5DB; /* Light Gray */
+    /* Background colors */
+    --color-bg-white: #FFFFFF;
+    --color-bg-light-gray: #FAFAFA;
+    --color-bg-very-light-gray: #F5F5F5;
+    --color-bg-slate: #F8FAFC;
+
+    /* Primary brand colors */
+    --color-primary: #3B82F6;           /* Vibrant blue */
+    --color-primary-hover: #2563EB;     /* Darker blue on hover */
+    --color-secondary: #8B5CF6;         /* Purple accent */
+    --color-secondary-hover: #7C3AED;   /* Darker purple */
+
+    /* Text colors */
+    --color-text-primary: #0A0A0A;      /* Rich black for headings */
+    --color-text-secondary: #3F3F46;    /* Dark gray for body */
+    --color-text-muted: #71717A;        /* Muted gray for metadata */
+
+    /* Accent colors */
+    --color-accent-success: #059669;    /* Success green */
+    --color-accent-warning: #F59E0B;    /* Warning amber */
+    --color-accent-highlight: #FEF3C7;  /* Yellow highlight for code */
+
+    /* Border colors */
+    --color-border-light: #E5E7EB;
+    --color-border-medium: #D1D5DB;
+
+    /* Code colors */
+    --color-code-bg: #FAFAF9;
+    --color-code-inline-bg: #FEF3C7;
+    --color-code-inline-text: #92400E;
 }
 
 html{
