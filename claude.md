@@ -44,7 +44,7 @@ This document provides context for AI agents working on this portfolio and blog 
 
 ```
 /
-├── index.html                    # Portfolio homepage
+├── index.html                    # Portfolio homepage (standalone HTML, NOT part of Jekyll)
 ├── assets/
 │   └── styles/
 │       ├── layout.css           # CSS variables & global styles
@@ -52,8 +52,13 @@ This document provides context for AI agents working on this portfolio and blog 
 ├── blog/
 │   ├── _config.yml              # Jekyll configuration
 │   ├── _layouts/
-│   │   ├── default.html         # Base layout (header, footer, nav)
-│   │   └── post.html            # Article layout with sticky TOC
+│   │   ├── default.html         # Base layout — uses includes for header/footer/connect
+│   │   └── post.html            # Article layout with sticky TOC + featured posts
+│   ├── _includes/               # ⭐ Reusable components (added V2)
+│   │   ├── header.html          # Header + nav + mobile menu + toggleMenu JS
+│   │   ├── footer.html          # Footer bar
+│   │   ├── connect-section.html # "Let's Connect" gradient section
+│   │   └── featured-posts.html  # Latest 3 posts grid (shown at bottom of each post)
 │   ├── _posts/                  # Blog articles (Markdown)
 │   ├── index.html               # Blog homepage
 │   └── Gemfile                  # Ruby dependencies
@@ -61,6 +66,10 @@ This document provides context for AI agents working on this portfolio and blog 
 │   └── jekyll.yml               # Deployment automation
 └── claude.md                    # This file
 ```
+
+### Architecture Decision: Portfolio stays independent
+
+`index.html` is intentionally **not** part of Jekyll. The portfolio (static brochure) and blog (content engine) have different concerns. The build pipeline copies `index.html` to `_site/` as-is after Jekyll builds the blog. Do not merge them — the complexity is not worth the minor DRY benefit.
 
 ## Design System
 
@@ -210,13 +219,28 @@ python3 -m http.server 8000
 - Contains all article styling (inline `<style>` block)
 - Includes sticky TOC styles and responsive breakpoints
 - JavaScript at bottom for TOC generation and scroll spy
+- Includes `featured-posts.html` after article content
 - Don't modify HTML structure without testing TOC functionality
 
 **`blog/_layouts/default.html`:**
-- Base template with header, footer, nav
+- Slim base template — delegates header/footer/connect to includes
 - Tailwind CSS for utility classes
-- Mobile menu toggle JavaScript
-- Gradient sections for "Let's Connect" and banner
+- Top banner ("Unlock possibilities together") is inline here, not in an include
+- To edit nav links, social icons, or mobile menu → edit `_includes/header.html`
+- To edit footer text → edit `_includes/footer.html`
+- To edit "Let's Connect" section → edit `_includes/connect-section.html`
+
+**`blog/_includes/header.html`:**
+- Full header: desktop nav, social icons, mobile menu, dropdown for Open Source tools
+- Contains the `toggleMenu()` JavaScript function
+- **Single source of truth for all blog navigation**
+
+**`blog/_includes/featured-posts.html`:**
+- Shows latest 3 posts (excluding the current post) at the bottom of every post
+- Uses `where_exp` Liquid filter to exclude current page
+- Hidden automatically if no other posts exist (`other_posts.size >= 1`)
+- Card layout: thumbnail (or placeholder icon), date, title, excerpt, tags
+- Responsive: 3-col desktop → 2-col tablet → 1-col mobile
 
 **`assets/styles/layout.css`:**
 - CSS custom properties (variables)
@@ -283,6 +307,8 @@ python3 -m http.server 8000
 - ❌ Override Tailwind classes unnecessarily
 - ❌ Remove scroll spy or smooth scroll functionality
 - ❌ Change color scheme without updating variables
+- ❌ Duplicate header/footer/connect HTML — always edit the `_includes/` files
+- ❌ Move `index.html` (portfolio) into Jekyll — intentionally kept separate
 
 ## Performance Considerations
 
@@ -308,8 +334,10 @@ python3 -m http.server 8000
 - RSS feed optimization
 - Image lazy loading
 - Social sharing buttons
-- Related posts recommendations
+- Related posts by tags (currently shows latest 3, regardless of topic)
 - Comment system (maybe)
+- Pagination for blog list page
+- Tags/categories filter page
 
 ## Questions to Ask the User
 
@@ -322,9 +350,9 @@ When uncertain, ask about:
 
 ## Last Updated
 
-**Date**: 2025-12-13
-**By**: Claude Sonnet 4.5
-**Changes**: Initial creation with comprehensive project context
+**Date**: 2026-02-19
+**By**: Claude Sonnet 4.6
+**Changes**: V2 component-based architecture — extracted header/footer/connect into `_includes/`, added `featured-posts.html`, refactored `default.html` to use includes, documented portfolio independence decision
 
 ---
 
