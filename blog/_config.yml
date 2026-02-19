@@ -43,7 +43,6 @@ defaults:
       type: "posts"
     values:
       layout: post
-      categories: [general]
       tags: []
       excerpt: ""
 
