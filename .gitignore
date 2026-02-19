@@ -60,4 +60,4 @@ temp/
 *.swo
 
 # planning files
-*/plan/**
+plan/**
