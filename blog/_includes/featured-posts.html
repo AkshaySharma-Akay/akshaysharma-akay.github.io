@@ -1,0 +1,164 @@
+{% assign other_posts = site.posts | where_exp: "post", "post.url != page.url" %}
+{% if other_posts.size >= 1 %}
+
+<style>
+    .featured-posts-section {
+        margin-top: 64px;
+        padding-top: 40px;
+        border-top: 1px solid #e5e7eb;
+    }
+
+    .featured-posts-section h2 {
+        font-size: 20px;
+        font-weight: 700;
+        color: #0a0a0a;
+        margin-bottom: 24px;
+        letter-spacing: -0.015em;
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .featured-posts-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    @media (max-width: 768px) {
+        .featured-posts-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+        .featured-posts-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    .featured-post-card {
+        border: 1px solid #e5e7eb;
+        border-radius: 10px;
+        overflow: hidden;
+        transition: box-shadow 0.2s ease, transform 0.2s ease;
+        background: #ffffff;
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .featured-post-card:hover {
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        transform: translateY(-2px);
+        border-color: #d1d5db;
+    }
+
+    .featured-post-card-thumb {
+        width: 100%;
+        height: 140px;
+        object-fit: cover;
+        display: block;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    .featured-post-card-thumb-placeholder {
+        width: 100%;
+        height: 140px;
+        background: linear-gradient(135deg, #eff6ff 0%, #eef2ff 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid #e5e7eb;
+        font-size: 32px;
+        color: #93c5fd;
+    }
+
+    .featured-post-card-body {
+        padding: 16px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .featured-post-card-date {
+        font-size: 11px;
+        color: #71717a;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .featured-post-card-title {
+        font-size: 15px;
+        font-weight: 600;
+        color: #0a0a0a;
+        line-height: 1.4;
+        letter-spacing: -0.01em;
+        flex: 1;
+    }
+
+    .featured-post-card:hover .featured-post-card-title {
+        color: #3b82f6;
+    }
+
+    .featured-post-card-excerpt {
+        font-size: 13px;
+        color: #71717a;
+        line-height: 1.5;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .featured-post-card-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        margin-top: 4px;
+    }
+
+    .featured-post-card-tag {
+        font-size: 10px;
+        font-weight: 500;
+        background: #eff6ff;
+        color: #3b82f6;
+        padding: 2px 8px;
+        border-radius: 20px;
+        letter-spacing: 0.02em;
+    }
+</style>
+
+<div class="featured-posts-section">
+    <h2>More from the Blog</h2>
+    <div class="featured-posts-grid">
+        {% for post in other_posts limit: 3 %}
+        <a href="{{ post.url | relative_url }}" class="featured-post-card">
+            {% if post.cover_image %}
+                <img src="{{ post.cover_image | relative_url }}" alt="{{ post.title }}" class="featured-post-card-thumb">
+            {% else %}
+                <div class="featured-post-card-thumb-placeholder">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+            {% endif %}
+            <div class="featured-post-card-body">
+                <span class="featured-post-card-date">{{ post.date | date: "%b %d, %Y" }}</span>
+                <div class="featured-post-card-title">{{ post.title }}</div>
+                {% if post.excerpt %}
+                    <p class="featured-post-card-excerpt">{{ post.excerpt | strip_html | truncate: 100 }}</p>
+                {% endif %}
+                {% if post.tags %}
+                <div class="featured-post-card-tags">
+                    {% for tag in post.tags limit: 3 %}
+                        <span class="featured-post-card-tag">{{ tag }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+
+{% endif %}
