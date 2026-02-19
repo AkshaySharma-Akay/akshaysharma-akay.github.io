@@ -32,6 +32,7 @@ github_username: AkshaySharma-Akay
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
 
 # Permalink structure
 permalink: /:categories/:year/:month/:day/:title.html
@@ -43,7 +44,6 @@ defaults:
       type: "posts"
     values:
       layout: post
-      categories: [general]
       tags: []
       excerpt: ""
 
