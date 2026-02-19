@@ -58,3 +58,6 @@ temp/
 *~
 *.swp
 *.swo
+
+# planning files
+plan/**

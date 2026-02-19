@@ -36,6 +36,17 @@ plugins:
 # Permalink structure
 permalink: /:categories/:year/:month/:day/:title.html
 
+# Front matter defaults — ensures GA always has required fields
+defaults:
+  - scope:
+      path: "_posts"
+      type: "posts"
+    values:
+      layout: post
+      categories: [general]
+      tags: []
+      excerpt: ""
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
